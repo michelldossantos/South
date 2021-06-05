@@ -7,6 +7,7 @@ target 'South' do
 
   # Pods for South
   pod 'Alamofire', '~> 5.2'
+  pod 'lottie-ios'
 
   target 'SouthTests' do
     inherit! :search_paths

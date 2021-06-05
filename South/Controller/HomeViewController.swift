@@ -8,22 +8,34 @@
 import UIKit
 
 class HomeViewController: UIViewController {
-
+    
+    private lazy var homeView: HomeView = {
+        let view = HomeView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: 60))
+        view.translatesAutoresizingMaskIntoConstraints = false
+        view.delegate = self
+        return view
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.backgroundColor = .red
+        view.addSubview(homeView)
+        title = "Tabela Fipe South System"
+        
+        homeView.anchor( top: view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor)
+    }
+}
 
-        // Do any additional setup after loading the view.
+extension HomeViewController : HomeViewDelegate {
+    func pressButtonCar() {
+        print("Print Carro")
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func pressButtonMotorcycle() {
+        print("Print Moto")
     }
-    */
-
+    
+    func pressButtonTruck() {
+        print("Print Caminhao")
+    }
 }
