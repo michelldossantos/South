@@ -11,23 +11,36 @@ import Foundation
 class HomeViewModel {
     
     let api = APIManager()
-
-    func getCarList() {
-        api.loadData(path: "/carros/marcas") { listBrands in
-            for marca in listBrands {
-                print(marca.name)
-        }
+    
+    func getListVehicle(_ vehicle: Vehicle) {
+        var sufix = ""
+        
+        switch vehicle {
+        case .car:
+            sufix = "carros/marcas"
+        case .motorcycle:
+            sufix = "motos/marcas"
+        case .truck:
+            sufix = "caminhoes/marcas"
             
         }
-    }
-    
-    func getMotorcycleList() {
+        
+        api.loadData(path: sufix) { listBrands in
+            for marca in listBrands {
+                print(marca.name)
+            }
+        }
         
     }
+
+
+func getMotorcycleList() {
     
-    func getTruckList() {
-        
-    }
+}
+
+func getTruckList() {
     
-    
+}
+
+
 }

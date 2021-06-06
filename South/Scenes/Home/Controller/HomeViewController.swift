@@ -7,6 +7,12 @@
 
 import UIKit
 
+enum Vehicle {
+    case car
+    case motorcycle
+    case truck
+}
+
 class HomeViewController: UIViewController {
     
     private var viewmodel: HomeViewModel?
@@ -31,14 +37,16 @@ class HomeViewController: UIViewController {
 
 extension HomeViewController : HomeViewDelegate {
     func pressButtonCar() {
-        viewmodel?.getCarList()
+        viewmodel?.getListVehicle(.car)
     }
     
     func pressButtonMotorcycle() {
-        viewmodel?.getMotorcycleList()
+        viewmodel?.getListVehicle(.motorcycle)
     }
     
     func pressButtonTruck() {
-        viewmodel?.getTruckList()
+        viewmodel?.getListVehicle(.truck)
     }
+    
+    
 }
