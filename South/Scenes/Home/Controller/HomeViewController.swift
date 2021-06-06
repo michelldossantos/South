@@ -34,19 +34,30 @@ class HomeViewController: UIViewController {
         homeView.anchor( top: view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor)
     }
 }
+extension HomeViewController {
+    
+    func goToListBrands(_ vehicle: Vehicle) {
+        viewmodel?.getListVehicle(vehicle, onComplete: { listVehicle in
+            let vc = ListsViewController()
+            guard let list = listVehicle else { return }
+                vc.list = list
+            
+            self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "Veiculos", style: .done, target: self, action: nil)
+            self.navigationController?.pushViewController(vc, animated: true)
+        })
+    }
+}
 
 extension HomeViewController : HomeViewDelegate {
     func pressButtonCar() {
-        viewmodel?.getListVehicle(.car)
+        goToListBrands(.car)
     }
     
     func pressButtonMotorcycle() {
-        viewmodel?.getListVehicle(.motorcycle)
+        goToListBrands(.motorcycle)
     }
     
     func pressButtonTruck() {
-        viewmodel?.getListVehicle(.truck)
+        goToListBrands(.truck)
     }
-    
-    
 }

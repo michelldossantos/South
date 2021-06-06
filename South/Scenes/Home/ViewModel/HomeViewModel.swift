@@ -12,7 +12,7 @@ class HomeViewModel {
     
     let api = APIManager()
     
-    func getListVehicle(_ vehicle: Vehicle) {
+    func getListVehicle(_ vehicle: Vehicle, onComplete: @escaping ([BaseClassAPI]?) -> Void) {
         var sufix = ""
         
         switch vehicle {
@@ -22,25 +22,17 @@ class HomeViewModel {
             sufix = "motos/marcas"
         case .truck:
             sufix = "caminhoes/marcas"
-            
         }
         
         api.loadData(path: sufix) { listBrands in
+            if listBrands .isEmpty {
+                onComplete([])
+            }
             for marca in listBrands {
                 print(marca.name)
             }
+            onComplete(listBrands)
         }
         
     }
-
-
-func getMotorcycleList() {
-    
-}
-
-func getTruckList() {
-    
-}
-
-
 }

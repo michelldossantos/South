@@ -14,7 +14,7 @@ class APIManager {
 //    var carDetail: CarDetail?
     var arrayDate = [BaseClassAPI]()
     
-    var apiBaseUrl = "https://parallelum.com.br/fipe/api/v1/"
+    var apiBaseUrl = "https://parallelum.com.br/fipe/api/v1"
     
     func loadData(path: String , onComplete: @escaping ([BaseClassAPI]) -> Void) {
             AF.request("\(apiBaseUrl)/\(path)").responseJSON { response in

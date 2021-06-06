@@ -152,10 +152,9 @@ class HomeView: UIView {
         carAnimation.play()
         motorcycleAnimation.play()
         truckAnimation.play()
-        
     }
     
-    //MARK: ============ Metodos =============
+    //MARK: ============ Methods =============
     
     @objc func pressbuttonCar() {
         delegate?.pressButtonCar()
