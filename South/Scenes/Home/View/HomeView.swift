@@ -148,7 +148,11 @@ class HomeView: UIView {
         truckAnimation.anchor(top: motorcycleAnimation.bottomAnchor, left: leftAnchor, paddingTop: 12, paddingLeft: 8)
         truckButton.anchor( left: truckAnimation.rightAnchor, right: rightAnchor, paddingLeft: 8, paddingRight: 8, height: 85)
         truckButton.centerY(inView: truckAnimation)
+        playAnimation()
         
+    }
+    
+    func playAnimation(){
         carAnimation.play()
         motorcycleAnimation.play()
         truckAnimation.play()

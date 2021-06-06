@@ -18,7 +18,6 @@
 		D0AA194F266B253F00DCEFF0 /* truck.json in Resources */ = {isa = PBXBuildFile; fileRef = D0AA194E266B253F00DCEFF0 /* truck.json */; };
 		D0D564D7266B08E200507454 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D564D6266B08E200507454 /* AppDelegate.swift */; };
 		D0D564D9266B08E200507454 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D564D8266B08E200507454 /* SceneDelegate.swift */; };
-		D0D564E0266B08E500507454 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0D564DF266B08E500507454 /* Assets.xcassets */; };
 		D0D564E3266B08E500507454 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D0D564E1266B08E500507454 /* LaunchScreen.storyboard */; };
 		D0D564EE266B08E500507454 /* SouthTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D564ED266B08E500507454 /* SouthTests.swift */; };
 		D0D564F9266B08E500507454 /* SouthUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D564F8266B08E500507454 /* SouthUITests.swift */; };
@@ -29,6 +28,7 @@
 		D0D56516266B20D700507454 /* car.json in Resources */ = {isa = PBXBuildFile; fileRef = D0D56515266B20D700507454 /* car.json */; };
 		D0FF1A60266C5BA40075E419 /* ListsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FF1A5F266C5BA40075E419 /* ListsViewController.swift */; };
 		D0FF1A64266C6C800075E419 /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FF1A63266C6C800075E419 /* ListViewModel.swift */; };
+		D0FF1A68266C86560075E419 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0FF1A67266C86560075E419 /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,7 +64,6 @@
 		D0D564D3266B08E200507454 /* South.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = South.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0D564D6266B08E200507454 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D0D564D8266B08E200507454 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		D0D564DF266B08E500507454 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D0D564E2266B08E500507454 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D0D564E4266B08E500507454 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D0D564E9266B08E500507454 /* SouthTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SouthTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -80,6 +79,7 @@
 		D0D56515266B20D700507454 /* car.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = car.json; sourceTree = "<group>"; };
 		D0FF1A5F266C5BA40075E419 /* ListsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListsViewController.swift; sourceTree = "<group>"; };
 		D0FF1A63266C6C800075E419 /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
+		D0FF1A67266C86560075E419 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E8375A67A704BAD8506078FB /* Pods-South.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-South.release.xcconfig"; path = "Target Support Files/Pods-South/Pods-South.release.xcconfig"; sourceTree = "<group>"; };
 		F191440A4B54C851039FD5F4 /* Pods_SouthTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SouthTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F852A71A12A0B0CFECF001A1 /* Pods-SouthTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SouthTests.debug.xcconfig"; path = "Target Support Files/Pods-SouthTests/Pods-SouthTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -195,9 +195,9 @@
 				D0D5650B266B11D600507454 /* Model */,
 				D0D564D6266B08E200507454 /* AppDelegate.swift */,
 				D0D564D8266B08E200507454 /* SceneDelegate.swift */,
-				D0D564DF266B08E500507454 /* Assets.xcassets */,
 				D0D564E1266B08E500507454 /* LaunchScreen.storyboard */,
 				D0D564E4266B08E500507454 /* Info.plist */,
+				D0FF1A67266C86560075E419 /* Assets.xcassets */,
 			);
 			path = South;
 			sourceTree = "<group>";
@@ -417,7 +417,7 @@
 				D0AA194D266B24B000DCEFF0 /* motorcycle.json in Resources */,
 				D094965C266B27BE0044ECC0 /* truck2.json in Resources */,
 				D0D564E3266B08E500507454 /* LaunchScreen.storyboard in Resources */,
-				D0D564E0266B08E500507454 /* Assets.xcassets in Resources */,
+				D0FF1A68266C86560075E419 /* Assets.xcassets in Resources */,
 				D0D56516266B20D700507454 /* car.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -35,6 +35,7 @@ class HomeViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         self.navigationController?.navigationBar.barTintColor = .white
+        homeView.playAnimation()
     }
 }
 extension HomeViewController {
@@ -43,7 +44,7 @@ extension HomeViewController {
         viewmodel?.getListVehicle(vehicle, onComplete: { listVehicle in
             let vc = ListsViewController()
             guard let list = listVehicle else { return }
-                vc.list = list
+            vc.list = list
             vc.titleNavigation = navigationTitle
             vc.vehicle = vehicle
             
