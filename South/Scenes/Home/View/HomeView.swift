@@ -25,7 +25,8 @@ class HomeView: UIView {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .blue
-        label.font = .systemFont(ofSize: 30)
+        label.font = UIFont(name: "AvenirNext-Bold", size: 30)
+        label.numberOfLines = 0
         label.text = "Escolha o tipo de Veículo"
         label.textAlignment = .center
         return label
@@ -74,7 +75,7 @@ class HomeView: UIView {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Carros", for: .normal)
         button.tintColor = .black
-        button.titleLabel?.font = .systemFont(ofSize: 25 )
+        button.titleLabel?.font = UIFont(name: "AvenirNext-Bold", size: 25)
         button.backgroundColor = .blue
         button.addTarget(self, action: #selector(pressbuttonCar), for: .touchUpInside)
         return button
@@ -86,7 +87,7 @@ class HomeView: UIView {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Motos", for: .normal)
         button.tintColor = .black
-        button.titleLabel?.font = .systemFont(ofSize: 25 )
+        button.titleLabel?.font = UIFont(name: "AvenirNext-Bold", size: 25)
         button.backgroundColor = .green
         button.addTarget(self, action: #selector(pressbuttonMotorcycle), for: .touchUpInside)
 
@@ -98,7 +99,7 @@ class HomeView: UIView {
         button.layer.cornerRadius = 13
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Caminhões", for: .normal)
-        button.titleLabel?.font = .systemFont(ofSize: 25 )
+        button.titleLabel?.font = UIFont(name: "AvenirNext-Bold", size: 25)
         button.backgroundColor = .magenta
         button.addTarget(self, action: #selector(pressbuttonTruck), for: .touchUpInside)
 

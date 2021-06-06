@@ -29,6 +29,8 @@
 		D0FF1A60266C5BA40075E419 /* ListsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FF1A5F266C5BA40075E419 /* ListsViewController.swift */; };
 		D0FF1A64266C6C800075E419 /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FF1A63266C6C800075E419 /* ListViewModel.swift */; };
 		D0FF1A68266C86560075E419 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0FF1A67266C86560075E419 /* Assets.xcassets */; };
+		D0FF1A6B266C87A60075E419 /* VehicleDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FF1A6A266C87A60075E419 /* VehicleDetailViewController.swift */; };
+		D0FF1A6F266C88000075E419 /* VehicleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FF1A6E266C88000075E419 /* VehicleModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +82,8 @@
 		D0FF1A5F266C5BA40075E419 /* ListsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListsViewController.swift; sourceTree = "<group>"; };
 		D0FF1A63266C6C800075E419 /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
 		D0FF1A67266C86560075E419 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D0FF1A6A266C87A60075E419 /* VehicleDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleDetailViewController.swift; sourceTree = "<group>"; };
+		D0FF1A6E266C88000075E419 /* VehicleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VehicleModel.swift; sourceTree = "<group>"; };
 		E8375A67A704BAD8506078FB /* Pods-South.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-South.release.xcconfig"; path = "Target Support Files/Pods-South/Pods-South.release.xcconfig"; sourceTree = "<group>"; };
 		F191440A4B54C851039FD5F4 /* Pods_SouthTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SouthTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F852A71A12A0B0CFECF001A1 /* Pods-SouthTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SouthTests.debug.xcconfig"; path = "Target Support Files/Pods-SouthTests/Pods-SouthTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -147,6 +151,7 @@
 		D0949662266B377E0044ECC0 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				D0FF1A69266C87600075E419 /* VehicleDetail */,
 				D0FF1A5E266C5B7A0075E419 /* ListBrand */,
 				D0949663266B37920044ECC0 /* Home */,
 			);
@@ -303,6 +308,31 @@
 				D0FF1A63266C6C800075E419 /* ListViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		D0FF1A69266C87600075E419 /* VehicleDetail */ = {
+			isa = PBXGroup;
+			children = (
+				D0FF1A70266C880C0075E419 /* Controller */,
+				D0FF1A6C266C87AC0075E419 /* Model */,
+			);
+			path = VehicleDetail;
+			sourceTree = "<group>";
+		};
+		D0FF1A6C266C87AC0075E419 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D0FF1A6E266C88000075E419 /* VehicleModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D0FF1A70266C880C0075E419 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D0FF1A6A266C87A60075E419 /* VehicleDetailViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -552,9 +582,11 @@
 				D0D5650D266B120A00507454 /* HomeView.swift in Sources */,
 				D0FF1A60266C5BA40075E419 /* ListsViewController.swift in Sources */,
 				D094965E266B33FB0044ECC0 /* HomeViewModel.swift in Sources */,
+				D0FF1A6B266C87A60075E419 /* VehicleDetailViewController.swift in Sources */,
 				D0D56512266B190B00507454 /* UiViewExtension.swift in Sources */,
 				D0D56510266B135100507454 /* UiColorExtension.swift in Sources */,
 				D0D564D9266B08E200507454 /* SceneDelegate.swift in Sources */,
+				D0FF1A6F266C88000075E419 /* VehicleModel.swift in Sources */,
 				D0D56508266B097500507454 /* HomeViewController.swift in Sources */,
 				D0FF1A64266C6C800075E419 /* ListViewModel.swift in Sources */,
 			);

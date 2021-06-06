@@ -62,5 +62,35 @@ class ListViewModel: NSObject {
         
     }
     
+    func getDetail(_ vehicle: Vehicle,  brandID: String, modelId: String, year: String,  onComplete: @escaping (VehicleModel?) -> Void) {
+        var sufix = ""
+        
+        switch vehicle {
+        case .car:
+            sufix = "carros/marcas/\(String(describing: brandID))/modelos/\(String(describing: modelId))/anos/\(String(describing: year))"
+        case .motorcycle:
+            sufix = "motos/marcas/\(String(describing: brandID))/modelos/\(String(describing: modelId))/anos/\(String(describing: year))"
+        case .truck:
+            sufix = "caminhoes/marcas/\(String(describing: brandID))/modelos/\(String(describing: modelId))/anos/\(String(describing: year))"
+        }
+        
+        
+        api.loadDataCarDetail(path: sufix) { vehicleDeteil in
+            if vehicleDeteil == nil{
+                onComplete(nil)
+            }
+            
+            onComplete(vehicleDeteil)
+        }
+        
+        
+            
+        
+        
+    }
+    
+    
+    
+    
     
 }

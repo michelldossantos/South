@@ -14,8 +14,10 @@ class ListsViewController: UIViewController {
     var vehicle: Vehicle?
     private var idBrand: String?
     private var idModel: String?
+    private var idYear: String?
     private var goModels = true
     private var goYear = false
+    
     
     private var viewModel: ListViewModel?
     
@@ -32,12 +34,17 @@ class ListsViewController: UIViewController {
         return tableView
     }()
     
+    //MARK: ======= Life Cycle ======
     
     override func viewDidLoad() {
         super.viewDidLoad()
         viewModel = ListViewModel()
         configurarTableView()
         configurarNavigationBar()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.navigationBar.barTintColor = .gray
     }
 }
 
@@ -70,6 +77,8 @@ extension ListsViewController: UITableViewDelegate, UITableViewDataSource {
         cell.textLabel?.text = list[indexPath.row].name
         cell.textLabel?.textAlignment = .center
         cell.textLabel?.textColor = .white
+        cell.textLabel?.numberOfLines = 0
+        cell.textLabel?.font = UIFont(name: "AvenirNext-Bold", size: 28)
         cell.backgroundColor = .gray
         
         return cell
@@ -97,18 +106,35 @@ extension ListsViewController: UITableViewDelegate, UITableViewDataSource {
                 vc.titleNavigation = "Modelos"
                 self.navigationController?.pushViewController(vc, animated: true)
             })
-        } else {
+        } else if !goModels && goYear {
             self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "Lista de Modelos", style: .done, target: self, action: nil)
             
             guard let vehicle = self.vehicle else { return }
 
-            let year = list[indexPath.row].id
-            viewModel?.getListYear(vehicle, brandID: self.idBrand!, modelId: year!, onComplete: { listYear in
+            self.idModel = list[indexPath.row].id
+            viewModel?.getListYear(vehicle, brandID: self.idBrand!, modelId: idModel!, onComplete: { listYear in
                 let vc = ListsViewController()
                 vc.list = listYear!
                 vc.titleNavigation = "Ano do Veículo"
+                vc.vehicle = vehicle
+                vc.idBrand = self.idBrand
+                vc.idModel = self.idModel
+                vc.goModels = false
+                vc.goYear = false
+//                vc.idYear = listYear[indexPath.row]
                 self.navigationController?.pushViewController(vc, animated: true)
             })
+            
+        } else {
+            self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "Anos", style: .done, target: self, action: nil)
+            self.idYear = list[indexPath.row].id
+            viewModel?.getDetail(vehicle!, brandID: self.idBrand!, modelId: self.idModel!, year: self.idYear!, onComplete: { [self] vehicel in
+                let vc = VehicleDetailViewController()
+                vc.setupView(vehicle: vehicel!, typeVehicle: vehicle!)
+                
+                self.navigationController?.pushViewController(vc, animated: true)
+            })
+            
             
         }
     }

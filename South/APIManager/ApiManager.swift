@@ -11,7 +11,7 @@ import Alamofire
 
 class APIManager {
     
-//    var carDetail: CarDetail?
+    var vehicleDetail: VehicleModel?
     var arrayDate = [BaseClassAPI]()
     
     var apiBaseUrl = "https://parallelum.com.br/fipe/api/v1"
@@ -48,20 +48,20 @@ class APIManager {
         }
     
     
-//    func loadDataCarDetail(path: String , onComplete: @escaping (Bool) -> Void) {
-//            AF.request("\(apiBaseUrl)/\(path)").responseJSON { response in
-//                if let json = response.value as? [String: Any] {
-//                    print(json)
-//                    let carDetail = CarDetail(fromDictionary: json)
+    func loadDataCarDetail(path: String , onComplete: @escaping (VehicleModel?) -> Void) {
+            AF.request("\(apiBaseUrl)/\(path)").responseJSON { response in
+                if let json = response.value as? [String: Any] {
+                    print(json)
+                    let carDetail = VehicleModel(fromDictionary: json)
+
+                    self.vehicleDetail = carDetail
 //
-//                    self.carDetail = carDetail
-////
-//                    onComplete(true)
-//                    return
-//                }
-//                onComplete(false)
-//            }
-//        }
+                    onComplete(carDetail)
+                    return
+                }
+                onComplete(nil)
+            }
+        }
     
     
 }

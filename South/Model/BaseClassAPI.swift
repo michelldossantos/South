@@ -6,7 +6,7 @@
 //
 import Foundation
 
-class BaseClassAPI: NSObject {
+struct BaseClassAPI {
     var id: String!
     var name: String!
 
