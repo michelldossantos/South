@@ -9,6 +9,8 @@ import UIKit
 
 class HomeViewController: UIViewController {
     
+    private var viewmodel: HomeViewModel?
+    
     private lazy var homeView: HomeView = {
         let view = HomeView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: 60))
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -18,6 +20,7 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewmodel = HomeViewModel()
         view.backgroundColor = .red
         view.addSubview(homeView)
         title = "Tabela Fipe South System"
@@ -28,14 +31,14 @@ class HomeViewController: UIViewController {
 
 extension HomeViewController : HomeViewDelegate {
     func pressButtonCar() {
-        print("Print Carro")
+        viewmodel?.getCarList()
     }
     
     func pressButtonMotorcycle() {
-        print("Print Moto")
+        viewmodel?.getMotorcycleList()
     }
     
     func pressButtonTruck() {
-        print("Print Caminhao")
+        viewmodel?.getTruckList()
     }
 }
