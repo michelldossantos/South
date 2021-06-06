@@ -27,20 +27,25 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         viewmodel = HomeViewModel()
-        view.backgroundColor = .red
         view.addSubview(homeView)
         title = "Tabela Fipe South System"
         
         homeView.anchor( top: view.topAnchor, left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor)
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.navigationBar.barTintColor = .white
+    }
 }
 extension HomeViewController {
     
-    func goToListBrands(_ vehicle: Vehicle) {
+    func goToListBrands(_ vehicle: Vehicle, _ navigationTitle: String) {
         viewmodel?.getListVehicle(vehicle, onComplete: { listVehicle in
             let vc = ListsViewController()
             guard let list = listVehicle else { return }
                 vc.list = list
+            vc.titleNavigation = navigationTitle
+            vc.vehicle = vehicle
             
             self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "Veiculos", style: .done, target: self, action: nil)
             self.navigationController?.pushViewController(vc, animated: true)
@@ -50,14 +55,14 @@ extension HomeViewController {
 
 extension HomeViewController : HomeViewDelegate {
     func pressButtonCar() {
-        goToListBrands(.car)
+        goToListBrands(.car, "Marcas de Carros")
     }
     
     func pressButtonMotorcycle() {
-        goToListBrands(.motorcycle)
+        goToListBrands(.motorcycle, "Marcas de Motos")
     }
     
     func pressButtonTruck() {
-        goToListBrands(.truck)
+        goToListBrands(.truck, "Marcas de Caminhões")
     }
 }

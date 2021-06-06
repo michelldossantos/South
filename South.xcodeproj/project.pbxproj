@@ -28,6 +28,7 @@
 		D0D56512266B190B00507454 /* UiViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0D56511266B190B00507454 /* UiViewExtension.swift */; };
 		D0D56516266B20D700507454 /* car.json in Resources */ = {isa = PBXBuildFile; fileRef = D0D56515266B20D700507454 /* car.json */; };
 		D0FF1A60266C5BA40075E419 /* ListsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FF1A5F266C5BA40075E419 /* ListsViewController.swift */; };
+		D0FF1A64266C6C800075E419 /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0FF1A63266C6C800075E419 /* ListViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +79,7 @@
 		D0D56511266B190B00507454 /* UiViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UiViewExtension.swift; sourceTree = "<group>"; };
 		D0D56515266B20D700507454 /* car.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = car.json; sourceTree = "<group>"; };
 		D0FF1A5F266C5BA40075E419 /* ListsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListsViewController.swift; sourceTree = "<group>"; };
+		D0FF1A63266C6C800075E419 /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
 		E8375A67A704BAD8506078FB /* Pods-South.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-South.release.xcconfig"; path = "Target Support Files/Pods-South/Pods-South.release.xcconfig"; sourceTree = "<group>"; };
 		F191440A4B54C851039FD5F4 /* Pods_SouthTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SouthTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F852A71A12A0B0CFECF001A1 /* Pods-SouthTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SouthTests.debug.xcconfig"; path = "Target Support Files/Pods-SouthTests/Pods-SouthTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -145,7 +147,7 @@
 		D0949662266B377E0044ECC0 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				D0FF1A5E266C5B7A0075E419 /* Lists */,
+				D0FF1A5E266C5B7A0075E419 /* ListBrand */,
 				D0949663266B37920044ECC0 /* Home */,
 			);
 			path = Scenes;
@@ -278,12 +280,29 @@
 			path = Animations;
 			sourceTree = "<group>";
 		};
-		D0FF1A5E266C5B7A0075E419 /* Lists */ = {
+		D0FF1A5E266C5B7A0075E419 /* ListBrand */ = {
+			isa = PBXGroup;
+			children = (
+				D0FF1A62266C67780075E419 /* ViewModel */,
+				D0FF1A61266C675F0075E419 /* Controller */,
+			);
+			path = ListBrand;
+			sourceTree = "<group>";
+		};
+		D0FF1A61266C675F0075E419 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
 				D0FF1A5F266C5BA40075E419 /* ListsViewController.swift */,
 			);
-			path = Lists;
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		D0FF1A62266C67780075E419 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				D0FF1A63266C6C800075E419 /* ListViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -537,6 +556,7 @@
 				D0D56510266B135100507454 /* UiColorExtension.swift in Sources */,
 				D0D564D9266B08E200507454 /* SceneDelegate.swift in Sources */,
 				D0D56508266B097500507454 /* HomeViewController.swift in Sources */,
+				D0FF1A64266C6C800075E419 /* ListViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

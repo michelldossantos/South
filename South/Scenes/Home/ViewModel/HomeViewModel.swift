@@ -24,6 +24,7 @@ class HomeViewModel {
             sufix = "caminhoes/marcas"
         }
         
+        
         api.loadData(path: sufix) { listBrands in
             if listBrands .isEmpty {
                 onComplete([])
