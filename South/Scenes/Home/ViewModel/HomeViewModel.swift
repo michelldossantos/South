@@ -19,7 +19,7 @@ class HomeViewModel {
         case .car:
             sufix = "carros/marcas"
         case .motorcycle:
-            sufix = "motos/marcas"
+            sufix = "motos/marca"
         case .truck:
             sufix = "caminhoes/marcas"
         }
