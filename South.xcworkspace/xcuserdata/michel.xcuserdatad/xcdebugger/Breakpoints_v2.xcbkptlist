@@ -304,7 +304,7 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "115"
                   endingLineNumber = "115"
-                  offsetFromSymbolStart = "2234">
+                  offsetFromSymbolStart = "2245">
                </Location>
                <Location
                   uuid = "4626B7CC-97C6-4CC4-8D7D-697617AD43FA - cb9f8b5f5be237c4"
@@ -353,6 +353,38 @@
             startingLineNumber = "64"
             endingLineNumber = "64"
             landmarkName = "setupView(vehicle:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "995781FC-DBDD-44FE-BC8A-892D9B573404"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "South/Scenes/Home/Controller/HomeViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "60"
+            endingLineNumber = "60"
+            landmarkName = "goToListBrands(_:_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A63636F8-44FD-41E6-B4C0-F17226C0C48B"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "South/Scenes/Home/Controller/HomeViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "63"
+            endingLineNumber = "63"
+            landmarkName = "goToListBrands(_:_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
