@@ -50,6 +50,9 @@ class HomeViewController: UIViewController {
         self.navigationController?.navigationBar.barTintColor = .white
         homeView.playAnimation()
     }
+    
+    
+     
 }
 extension HomeViewController {
     
