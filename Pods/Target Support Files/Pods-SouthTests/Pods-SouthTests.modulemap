@@ -1,0 +1,6 @@
+framework module Pods_SouthTests {
+  umbrella header "Pods-SouthTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
