@@ -89,7 +89,7 @@ class VehicleDetailViewController: UIViewController {
         self.navigationController?.navigationBar.barTintColor = .white
 
         NSLayoutConstraint.activate([
-            self.vAnimation.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 120),
+            self.vAnimation.topAnchor.constraint(equalTo: self.view.topAnchor, constant: 40),
             self.vAnimation.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 16),
             self.vAnimation.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -16),
             

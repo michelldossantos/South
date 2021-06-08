@@ -123,6 +123,8 @@ class HomeView: UIView {
         self.configurarView()
     }
     
+    
+    
     //MARK: ============== Setup ===================
     
     private func configurarView() {

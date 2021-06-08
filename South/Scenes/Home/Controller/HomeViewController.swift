@@ -50,6 +50,9 @@ class HomeViewController: UIViewController {
         self.navigationController?.navigationBar.barTintColor = .white
         homeView.playAnimation()
     }
+    
+    
+     
 }
 extension HomeViewController {
     
@@ -57,15 +60,28 @@ extension HomeViewController {
         activeIndicator.startAnimating()
         viewmodel?.getListVehicle(vehicle, onComplete: { listVehicle in
             self.activeIndicator.stopAnimating()
-            let vc = ListsViewController()
-            guard let list = listVehicle else { return }
-            vc.list = list
-            vc.titleNavigation = navigationTitle
-            vc.vehicle = vehicle
+            if listVehicle?.count == 0 {
+                self.alert()
+            } else {
+                let vc = ListsViewController()
+                guard let list = listVehicle else { return }
+                vc.list = list
+                vc.titleNavigation = navigationTitle
+                vc.vehicle = vehicle
+                
+                self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "Veiculos", style: .done, target: self, action: nil)
+                self.navigationController?.pushViewController(vc, animated: true)
+            }
             
-            self.navigationItem.backBarButtonItem = UIBarButtonItem(title: "Veiculos", style: .done, target: self, action: nil)
-            self.navigationController?.pushViewController(vc, animated: true)
         })
+    }
+    
+    func alert() {
+        let alerta = UIAlertController(title: "Atenção", message: "Ocorreu algum problema, tente novamente mais tarde!", preferredStyle: .alert)
+        
+        alerta.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        present(alerta, animated: true, completion: nil)
+        
     }
 }
 
