@@ -21,6 +21,8 @@ class HomeView: UIView {
     
     weak var delegate: HomeViewDelegate?
     
+  
+    
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false

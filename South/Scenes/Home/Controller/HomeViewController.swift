@@ -17,6 +17,18 @@ class HomeViewController: UIViewController {
     
     private var viewmodel: HomeViewModel?
     
+    private lazy var activeIndicator: UIActivityIndicatorView = {
+        let aI = UIActivityIndicatorView()
+        aI.center = view.center
+        aI.hidesWhenStopped = true
+        aI.style = .large
+        aI.color = .blue
+        view.addSubview(aI)
+        
+        return aI
+        
+    }()
+    
     private lazy var homeView: HomeView = {
         let view = HomeView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: 60))
         view.translatesAutoresizingMaskIntoConstraints = false
@@ -26,6 +38,7 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         viewmodel = HomeViewModel()
         view.addSubview(homeView)
         title = "Tabela Fipe South System"
@@ -41,7 +54,9 @@ class HomeViewController: UIViewController {
 extension HomeViewController {
     
     func goToListBrands(_ vehicle: Vehicle, _ navigationTitle: String) {
+        activeIndicator.startAnimating()
         viewmodel?.getListVehicle(vehicle, onComplete: { listVehicle in
+            self.activeIndicator.stopAnimating()
             let vc = ListsViewController()
             guard let list = listVehicle else { return }
             vc.list = list
